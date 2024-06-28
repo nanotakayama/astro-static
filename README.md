@@ -12,8 +12,8 @@ HTML,Sass,Javascriptの知見のある人向け
 ## 開発仕様
 Astroで構築したものをHTMLへ変換しWebへ表示。  
 SassとJavascriptは複数の記述を1つのファイルにまとめる。  
-CSS設計は「FLOCSS」を採用した管理。  
-スタイリングはAstroに直接書く記述でも問題ないが、Sassファイルにまとめることで開発をスムーズにすることを可能に（Javascirptも同様）
+CSS設計は「FLOCSS」を採用。  
+スタイリングはAstroに直接書く記述でも問題ないが、Sassファイルにまとめることで開発をスムーズに管理もしやすくなる（Javascirptも同様）
 
 Vscodeを使用している人は以下のプラグインのインストールを推奨
 ```
@@ -115,3 +115,46 @@ npm: 9.6.7
 
 - templates  
   ページに必要なテンプレート類のAstroを格納
+
+
+## その他
+- Gitプッシュ時のプレフィックス
+```
+fix：バグ修正
+hotfix：クリティカルなバグ修正
+add：新規（ファイル）機能追加
+update：機能修正（バグではない）
+change：仕様変更
+clean：整理（リファクタリング等）
+disable：無効化（コメントアウト等）
+remove：削除（ファイル）
+upgrade：バージョンアップ
+revert：変更取り消し
+```
+
+- FLOCSSの命名規則
+```
+Layout：l-*
+Component：c-*
+Project：p-*
+Utility：u-*
+JS関連: js-*,is-*
+```
+
+- 画像命名ルール(参考程度)
+```
+bg-main_section（背景 bg-）
+hero-top_slide（メインビジュアル hero-）
+logo-brand_name （ロゴ logo-）
+title-about （タイトル title-）
+txt-about_desc （文章 txt-）
+icon-open （アイコン icon-）
+chart-access （グラフ・リスト chart-）
+bnr-campaign （バナー bnr-）
+thm-single（サムネイル・アイキャッチ thm-）
+img-project（一般的な画像 img-）
+img-project_0001 （連番2桁か4桁をよく使う）
+img-project_off （on・off）
+img-project_sp （sp）
+img-project_2x （2x）
+```
