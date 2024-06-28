@@ -3,6 +3,7 @@ AstroとはWebサイトを作成するためのWebフレームワーク
 JavaScriptをビルド時に排除することで高速なWebサイトを作成可能  
 使い方・作成の手順は一通り下記を参照し、拡張する場合は公式ドキュメントを参照（https://docs.astro.build/en/getting-started/）
 
+
 ## 使用用途
 静的HTMLの構築に適したStartKit（LP,コーポレートサイト 等）  
 HTML,Sass,Javascriptの知見のある人向け
@@ -13,6 +14,15 @@ Astroで構築したものをHTMLへ変換しWebへ表示。
 SassとJavascriptは複数の記述を1つのファイルにまとめる。  
 CSS設計は「FLOCSS」を採用した管理。  
 スタイリングはAstroに直接書く記述でも問題ないが、Sassファイルにまとめることで開発をスムーズにすることを可能に（Javascirptも同様）
+
+Vscodeを使用している人は以下のプラグインのインストールを推奨
+```
+・Astro（https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode）
+言語モードにAstroを追加
+
+・Astro Snippets（https://marketplace.visualstudio.com/items?itemName=SheltonLouis.astro-snippets）
+Astro構築が快適になるスニペットセットを追加
+```
 
 
 ## 動作環境
