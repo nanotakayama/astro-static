@@ -4,6 +4,7 @@ import './structure/adjustViewport';
 import InView from './components/inView';
 // import Accordion from './components/accordion';
 // import Modal from './components/modal';
+// import Header from './components/header';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -24,5 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // const modalEl = [...document.querySelectorAll('[data-a11y-dialog]')].map(el => {
   //   return new Modal(el);
   // });
+
+  // const header = new Header();
 
 });

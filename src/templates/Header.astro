@@ -25,77 +25,6 @@
 </header>
 
 <style lang="scss">
-  .p-header {
-    width: 100%;
-    height: 64px;
-    background-color: #eee;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 24px;
-    position: relative;
-    @include mq-up(md) {
-      height: 80px;
-    }
-    &__logo {
-      font-size: fn-rem(18);
-      font-weight: $font-weight-bold;
-      color: #202020;
-      font-family: $font-family-en;
-      @include mq-up(md) {
-        font-size: fn-rem(28);
-      }
-    }
-    &__hum {
-      width: 48px;
-      height: 48px;
-      background-color: #202020;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      right: 16px;
-      cursor: pointer;
-      span {
-        width: 24px;
-        height: 1px;
-        background-color: $color-white;
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        transition: .28s cubic-bezier(0.03, 0.5, 0.63, 1.07);
-        opacity: 1;
-        will-change: transform;
-        &:nth-child(1) {
-          top: 16px;
-        }
-        &:nth-child(2) {
-          top: 0;
-          bottom: 0;
-        }
-        &:nth-child(3) {
-          bottom: 16px;
-        }
-      }
-      &.is-trans {
-        span {
-          &:nth-child(1) {
-            top: 24px;
-            transform: rotate(45deg);
-          }
-          &:nth-child(2) {
-            opacity: 0;
-          }
-          &:nth-child(3) {
-            bottom: 23px;
-            transform: rotate(-45deg);
-          }
-        }
-      }
-    }
-  }
 </style>
 
 <script>
@@ -104,6 +33,5 @@
     button.addEventListener('click', function () {
       button.classList.toggle('is-trans')
     });
-    
   });
 </script>

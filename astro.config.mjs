@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import node from "@astrojs/node";
 import relativeLinks from 'astro-relative-links';
+import htmlBeautifier from 'astro-html-beautifier';
+import publicDir from 'astro-public';
 
 export default defineConfig({
   server: {
@@ -15,6 +17,8 @@ export default defineConfig({
   },
   integrations: [
     relativeLinks(),
+    htmlBeautifier(),
+    publicDir('static'),
 		(await import("astro-compress")).default({
 			HTML: false,
       CSS: false,
@@ -22,6 +26,7 @@ export default defineConfig({
   ],
   publicDir: './dist',
   outDir: './public',
+  output: "static",
   build: {
     format: 'file',
     assets: 'assets',
@@ -59,6 +64,7 @@ export default defineConfig({
            @import "src/assets/styles/foundation/vendor/_index.scss";
            @import "src/assets/styles/object/component/_index.scss";
            @import "src/assets/styles/object/project/_index.scss";
+           @import "src/assets/styles/object/layout/_index.scss";
            @import "src/assets/styles/object/utility/_index.scss";`,
         }
       }
