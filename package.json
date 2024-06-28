@@ -1,0 +1,60 @@
+{
+  "name": "jcool-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "prettier:watch": "onchange \"src/**/*.{astro,ts,scss}\" -- prettier --write --ignore-unknown {{changed}}",
+    "prettier": "prettier --write src/**/*.{astro,ts,scss}",
+    "lint": "eslint \"src/**/*.ts\" \"src/**/*.astro\" --fix",
+    "stylelint": "stylelint --fix 'src/**/*.scss'",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.4",
+    "@astrojs/node": "^8.3.1",
+    "@tailwindcss/typography": "^0.5.13",
+    "a11y-dialog": "^8.0.4",
+    "astro": "^4.11.3",
+    "astro-compress": "^2.2.28",
+    "astro-imagetools": "^0.9.0",
+    "astro-relative-links": "^0.3.5",
+    "autoprefixer": "^10.4.16",
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "motion": "^10.18.0",
+    "newt-client-js": "^3.2.8",
+    "postcss": "^8.4.32",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "remark-reading-time": "^2.0.1",
+    "the-new-css-reset": "^1.11.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "cssnano": "^7.0.3",
+    "eslint": "^8.55.0",
+    "eslint-plugin-astro": "^0.31.0",
+    "onchange": "^7.1.0",
+    "postcss-html": "^1.5.0",
+    "prettier": "^3.3.2",
+    "prettier-plugin-astro": "^0.12.3",
+    "sass": "^1.77.6",
+    "stylelint": "^16.0.2",
+    "stylelint-config-standard-scss": "^12.0.0",
+    "stylelint-prettier": "^5.0.0",
+    "stylelint-scss": "^6.0.0"
+  },
+  "browserslist": [
+    "> 3% in JP",
+    "not IE 11",
+    "last 1 versions"
+  ],
+  "volta": {
+    "node": "18.17.1",
+    "npm": "9.6.7"
+  }
+}

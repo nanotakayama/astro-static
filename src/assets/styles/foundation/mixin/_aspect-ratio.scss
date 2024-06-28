@@ -1,0 +1,44 @@
+@use 'sass:math';
+
+@mixin aspect-ratio($width, $height) {
+  &::before {
+    $padding: unquote((math.div($height, $width)) * 100 + '%');
+    content: '';
+    float: left;
+    padding-top: $padding;
+  }
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin aspect-ratio-pt($width, $height) {
+  $padding: unquote((math.div($height, $width)) * 100 + '%');
+  padding-top: $padding;
+}
+
+// Usage Examples
+// -----------------
+// 比率指定
+// .youtube {
+//   max-width: 1200px;
+//   position: relative;
+//   @include aspect-ratio(16, 9);
+// }
+
+// .responsive-img {
+//   @include aspect-ratio-pt(540, 100);
+//   img {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     background: img_url('xx.webp') no-repeat center / contain;
+//   }
+// }

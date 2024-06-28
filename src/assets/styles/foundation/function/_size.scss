@@ -1,0 +1,30 @@
+@use '../variable/variable' as *;
+@use 'sass:math';
+
+@function size($from: 14, $to: 16, $vp-from: $camp-width-mobile, $vp-to: $camp-width-desktop) {
+  @if $from <= $to {
+    $slope: math.div($to - $from, $vp-to - $vp-from) * 100;
+    $sizeIntercept: math.div($vp-to * $from - $vp-from * $to, $vp-to - $vp-from);
+    $size: calc(#{$slope} * var(--vw) + #{$sizeIntercept}px);
+
+    @return clamp(#{$from}px, #{$size}, #{$to}px);
+  } @else {
+    $slope: math.div($to - $from, $vp-to - $vp-from) * 100;
+    $sizeIntercept: math.div($vp-to * $from - $vp-from * $to, $vp-to - $vp-from);
+    $size: calc(#{$slope} * var(--vw) + #{$sizeIntercept}px);
+
+    @return clamp(#{$to}px, #{$size}, #{$from}px);
+  }
+}
+
+/* Usage Examples/
+.p-text {
+  // SPとPCのサイズ
+  font-size: size(16, 42);
+}
+
+.p-text {
+  // SPとPCのサイズ SPのビューポート PCのビューポート
+  font-size: size(16, 42, 316, 1240);
+}
+*/

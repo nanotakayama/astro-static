@@ -1,0 +1,49 @@
+@mixin lh-crop-be($line-height, $capital-letter: 1) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((#{$capital-letter} - #{$line-height}) * 0.5em);
+  }
+}
+
+@mixin lh-crop-af($line-height, $capital-letter: 1) {
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-bottom: calc((#{$capital-letter} - #{$line-height}) * 0.5em);
+  }
+}
+
+@mixin lh-crop($line-height, $capital-letter: 1) {
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+  }
+  &::before {
+    margin-top: calc((#{$capital-letter} - #{$line-height}) * 0.5em);
+  }
+  &::after {
+    margin-bottom: calc((#{$capital-letter} - #{$line-height}) * 0.5em);
+  }
+}
+
+@mixin lh-crop-clear() {
+  &::before,
+  &::after {
+    margin: 0;
+  }
+}
+
+// Usage Examples
+// -----------------
+// .text {
+//  // line-heigth:1.5のテキストから上下の余白を消し、line-heigth:1のように見せる
+//   @include lh-crop(1.5);
+// }

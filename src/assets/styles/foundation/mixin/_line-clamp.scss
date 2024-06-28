@@ -1,0 +1,20 @@
+@mixin line-clamp($count: 2) {
+  @if $count == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $count;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Usage Examples
+// -----------------
+// 文章省略、三点リーダー追加
+// .bar {
+//   @include line-clamp(1); // 1行目で三点リーダー
+//   @include line-clamp(4); // 4行目で三点リーダー
+// }

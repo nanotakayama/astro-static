@@ -1,0 +1,133 @@
+// Colors
+// ---------------------------------------------
+$color-white: #fff !default;
+$color-black: #000 !default;
+// $color-xxx_dk: darken($color-black, 10%) !default;
+// $color-xxx_lt: lighten($color-white, 10%) !default;
+
+// SNS Color
+// -----------------
+$color-twitter: #00aced !default;
+$color-facebook: #305097 !default;
+$color-hatena: #00a4de !default;
+$color-pocket: #ef4056 !default;
+$color-googleplus: #db4e3f !default;
+$color-youtube: #ff0000 !default;
+
+// Project Color
+// -----------------
+// $pjc-main-01: #----- !default;
+// $pjc-main-02: #----- !default;
+// $pjc-main-03: #----- !default;
+
+// $pjc-accent-01: #----- !default;
+// $pjc-accent-02: #----- !default;
+// $pjc-accent-03: #----- !default;
+
+// $pjc-gs-01: #----- !default;
+// $pjc-gs-02: #----- !default;
+// $pjc-gs-03: #----- !default;
+
+$pjc-txt-base: #333 !default;
+
+// Font Family
+// ---------------------------------------------
+$font-family-base: 'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif !default;
+$font-family-en: "Roboto", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif !default;
+
+// Line Height
+// ---------------------------------------------
+// $line-height-s: 1.4 !default;
+// $line-height-m: 1.6 !default;
+// $line-height-l: 1.8 !default;
+// $line-height-xl: 2 !default;
+
+// Fonts Weight
+// ---------------------------------------------
+$font-weight-thin: 100;
+$font-weight-exLight: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semiBold: 600;
+$font-weight-bold: 700;
+$font-weight-exBold: 800;
+$font-weight-black: 900;
+
+// Layers z-index
+// ---------------------------------------------r.
+$layer-header: 7000 !default;
+$layer-gnav: 8000 !default;
+$layer-modal: 9000 !default;
+
+// Path
+// ---------------------------------------------
+$dir-img-base: '../images/';
+
+// Layout
+// ---------------------------------------------
+// breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1280,
+  xxl: 1400,
+) !default;
+
+$camp-width-mobile: 375 !default;
+$camp-width-desktop: 1280 !default;
+
+// Easings
+// ---------------------------------------------
+// Basic Easing
+// ease(easeInSine);
+$easing: (
+  // ease: cubic-bezier(0.25, 0.1, 0.25, 1),
+  // ease-in: cubic-bezier(0.42, 0, 1, 1),
+  // ease-out: cubic-bezier(0, 0, 0.58, 1),
+  // ease-in-out: cubic-bezier(0.42, 0, 0.58, 1),
+  // linear: cubic-bezier(0.0, 0.0, 1.0, 1.0),
+  easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715),
+  easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1),
+  easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95),
+  easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53),
+  easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955),
+  easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+  easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+  easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1),
+  easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22),
+  easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1),
+  easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1),
+  easeInQuint: cubic-bezier(0.755, 0.05, 0.855, 0.06),
+  easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1),
+  easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1),
+  easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035),
+  easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1),
+  easeInOutExpo: cubic-bezier(1, 0, 0, 1),
+  easeInCirc: cubic-bezier(0.6, 0.04, 0.98, 0.335),
+  easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1),
+  easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86),
+  easeInBack: cubic-bezier(0.6, -0.28, 0.735, 0.045),
+  easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+) !default;
+
+$base-ease: easeInSine !default;
+
+// Material Easing
+// standard - 標準イージング 例：静止状態で開始・終了する要素
+// decelerated - 減速イージング 例：画面外から入る
+// accelerated - 加速イージング 例：画面外へ出る
+$ease-standard: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$ease-decelerated: cubic-bezier(0, 0, 0.2, 1) !default;
+$ease-accelerated: cubic-bezier(0.4, 0, 1, 1) !default;
+
+// Project Anime
+$pj-duration-fast: 0.15s;
+$pj-duration-neutral: 0.35s;
+$pj-duration-slow: 0.5s;
+$pj-ease-out: cubic-bezier(0, 0, 0, 1) !default;
+$pj-ease-in-out: cubic-bezier(0.5, 0, 0.5, 1) !default;

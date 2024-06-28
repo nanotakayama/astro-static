@@ -1,0 +1,26 @@
+@mixin lh-inc-mt($margin, $font-size, $line-height) {
+  margin-top: calc(#{$margin} - (((#{$font-size} * #{$line-height}) - #{$font-size}) / 2));
+}
+
+@mixin lh-inc-mb($margin, $font-size, $line-height) {
+  margin-bottom: calc(#{$margin} - (((#{$font-size} * #{$line-height}) - #{$font-size}) / 2));
+}
+
+@mixin lh-inc-pt($padding, $font-size, $line-height) {
+  padding-top: calc(#{$padding} - (((#{$font-size} * #{$line-height}) - #{$font-size}) / 2));
+}
+
+@mixin lh-inc-pb($padding, $font-size, $line-height) {
+  padding-bottom: calc(#{$padding} - (((#{$font-size} * #{$line-height}) - #{$font-size}) / 2));
+}
+
+// Usage Examples
+// -----------------
+// .text {
+// // line-heightを考慮した余白指定、テキストサイズ1.6remでline-height1.4の時に余白20pxつけたい時。
+//   @include lh-inc-mt(20px, 1.6rem, 1.4);
+// }
+
+// .text {
+//   @include lh-inc-mb(20px, 1.6rem, 1.4);
+// }

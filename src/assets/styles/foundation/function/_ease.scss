@@ -1,0 +1,9 @@
+@use '../variable/variable' as *;
+
+@function ease($type: $base-ease) {
+  @return if(map_has_key($easing, $type), map_get($easing, $type), null);
+}
+
+/* Usage Examples/
+ease(easeInSine);
+*/

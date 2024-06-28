@@ -1,0 +1,15 @@
+@function strip_unit($num) {
+  @if type-of($num) == 'number' and not unitless($num) {
+    @return $num / ($num * 0 + 1);
+  }
+
+  @return $num;
+}
+
+/* Usage Examples/
+// 単位付きの値から単位を取り除く
+
+$length: 16px;
+$value: strip_unit($length);
+// $value = 16
+*/

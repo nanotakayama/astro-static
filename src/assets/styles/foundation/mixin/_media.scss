@@ -1,0 +1,31 @@
+@use '../variable/variable' as *;
+
+// xx以下に適用
+@mixin mq-down($breakpoint: md) {
+  @media not screen and (min-width: #{map-get($breakpoints, $breakpoint)}px) {
+    @content;
+  }
+}
+
+// xx以上に適用 - 推奨
+@mixin mq-up($breakpoint: md) {
+  @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}px) {
+    @content;
+  }
+}
+
+// Retina Display
+@mixin mq-2x {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+// Usage Examples
+// -----------------
+// .heading {
+//   font-size: 14px;
+//   @include mq-up(md) {
+//     font-size: 16px;
+//   }
+// }

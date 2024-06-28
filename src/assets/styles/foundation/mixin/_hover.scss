@@ -1,0 +1,19 @@
+@mixin hover() {
+  // &:focus {
+  //   @content;
+  // }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// Usage Examples
+// -----------------
+
+// .link {
+//   @include hover() {
+//     color: red;
+//   }
+// }

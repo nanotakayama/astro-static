@@ -1,0 +1,11 @@
+dist
+dist/
+public
+.build
+build
+node_modules
+dist
+.log
+.iml
+.astro/
+.DS_Store

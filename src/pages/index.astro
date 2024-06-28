@@ -1,0 +1,60 @@
+---
+import Layout from '@templates/Layout.astro';
+import Card from '@components/Card.astro';
+import Container from '@components/Container.astro';
+
+// Cardプロパティ
+const cards = [
+  {
+    class: 'c-card--contents',
+    href: '',
+    srcPaths: '/src/assets/images/thum-sample_01.jpg',
+    load: 'lazy',
+    alt: '画像1です',
+    title: 'カードタイプ01',
+    dtl: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れていま',
+  },
+  {
+    class: 'c-card--contents',
+    href: '',
+    srcPaths: '/src/assets/images/thum-sample_02.jpg',
+    load: 'lazy',
+    alt: '画像2です',
+    title: 'カードタイプ02',
+    dtl: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れていま',
+  },
+  {
+    class: 'c-card--contents',
+    href: '',
+    srcPaths: '/src/assets/images/thum-sample_03.jpg',
+    load: 'lazy',
+    alt: '画像3です',
+    title: 'カードタイプ03',
+    dtl: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れていま',
+  },
+]
+---
+
+<Layout title="Astro4.0 Static" description="Astro4.0 構築環境テスト">
+  <div class="p-contents">
+    <Container class="p-contents__inner">
+      <ul class="p-contents__list">
+        {cards.map(card =>(
+          <Card
+            class={card.class}
+            href={card.href}
+            srcPaths={card.srcPaths}
+            load={card.load}
+            alt={card.alt} 
+            title={card.title} 
+            dtl={card.dtl} 
+          />
+        ))}
+      </ul>
+    </Container>
+  </div>
+</Layout>
+
+<style lang="scss">
+  
+</style>

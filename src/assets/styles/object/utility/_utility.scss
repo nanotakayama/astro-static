@@ -1,0 +1,18 @@
+@use '../../global' as *;
+
+.u-forSP {
+  @include mq-up(md) {
+    display: none;
+  }
+}
+
+.u-forPC {
+  display: none;
+  @include mq-up(md) {
+    display: block;
+  }
+}
+
+.u-txtHide {
+  @include text-hide();
+}

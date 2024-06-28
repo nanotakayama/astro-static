@@ -1,0 +1,33 @@
+@use '../variable/variable' as *;
+@use 'sass:math';
+
+@function get_vw($size, $viewport: $camp-width-mobile) {
+  $rateView: math.div(100, $viewport);
+  $rateSize: $rateView * $size;
+  @return calc($rateSize * var(--vw));
+}
+
+@function get_vwSP($size, $viewport: $camp-width-mobile) {
+  $rateView: math.div(100, $viewport);
+  $rateSize: $rateView * $size;
+  @return calc($rateSize * var(--vw));
+}
+
+@function get_vwPC($size, $viewport: $camp-width-desktop) {
+  $rateView: math.div(100, $viewport);
+  $rateSize: $rateView * $size;
+  @return calc($rateSize * var(--vw));
+}
+
+/* Usage Examples/
+.box {
+  // 画面サイズが300の時に120px
+  width: get_vw(120,300);
+
+  // $camp-width-mobileで設定したSPデザインの画面サイズの画面を基準に
+  width: get_vwSP(120);
+
+  // $camp-width-desktopで設定したPCデザインの画面サイズの画面を基準に
+  width: get_vwSP(120);
+}
+*/
