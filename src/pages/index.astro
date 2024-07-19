@@ -1,51 +1,54 @@
 ---
 import Layout from '@templates/Layout.astro';
+import Picture from '@templates/mixin/Picture.astro';
+import Container from '@templates/mixin/Container.astro';
 import Card from '@components/Card.astro';
-import Container from '@components/Container.astro';
 
 // Cardプロパティ
 const cards = [
   {
     class: 'c-card--contents',
-    href: '',
-    srcPaths: '/src/assets/images/thum-sample_01.jpg',
-    load: 'lazy',
-    alt: '画像1です',
+    href: 'page.html',
+    vis: './assets/images/thum-sample_01.jpg',
+    alt: 'サンプルカード01',
     title: 'カードタイプ01',
     dtl: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れていま',
   },
   {
     class: 'c-card--contents',
-    href: '',
-    srcPaths: '/src/assets/images/thum-sample_02.jpg',
-    load: 'lazy',
-    alt: '画像2です',
+    href: 'page.html',
+    vis: './assets/images/thum-sample_02.jpg',
+    alt: 'サンプルカード02',
     title: 'カードタイプ02',
     dtl: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れていま',
   },
   {
     class: 'c-card--contents',
-    href: '',
-    srcPaths: '/src/assets/images/thum-sample_03.jpg',
-    load: 'lazy',
-    alt: '画像3です',
+    href: 'page.html',
+    vis: './assets/images/thum-sample_03.jpg',
+    alt: 'サンプルカード03',
     title: 'カードタイプ03',
     dtl: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れていま',
   },
 ]
 ---
 
-<Layout title="Astro4.0 Static" description="Astro4.0 静的開発環境">
+<Layout>
   <div class="p-contents">
     <Container class="p-contents__inner">
+      <div class="p-main">
+        <Picture 
+          srcPaths={['img-sample_pc.jpg','img-sample_sp.jpg']}
+          media='768' 
+        />	
+      </div>
       <ul class="p-contents__list">
         {cards.map(card =>(
           <Card
             class={card.class}
             href={card.href}
-            srcPaths={card.srcPaths}
-            load={card.load}
-            alt={card.alt} 
+            vis={card.vis}
+            alt={card.alt}
             title={card.title} 
             dtl={card.dtl} 
           />
@@ -56,6 +59,17 @@ const cards = [
 </Layout>
 
 <style lang="scss">
+  .p-contents {
+    margin-top: 80px;
+    &__list {
+      display: block;
+      width: auto;
+      @include mq-up(md) {
+        display: flex;
+        align-items: flex-start;
+        margin-right: -20px;
+        margin-left: -20px;
+      }
+    }
+  }
 </style>
-<script>
-</script>

@@ -1,32 +1,31 @@
 import { defineConfig } from 'astro/config';
-import node from "@astrojs/node";
+import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { astroImageTools } from "astro-imagetools";
+import sitemap from "@astrojs/sitemap";
 import relativeLinks from 'astro-relative-links';
 import htmlBeautifier from 'astro-html-beautifier';
-import publicDir from 'astro-public';
+// import publicDir from 'astro-public';
 
 export default defineConfig({
   server: {
     host: true,
     open: true,
   },
-  adapter: node({
-    mode: "standalone",
-  }),
   devToolbar: {
     enabled: false
   },
+  integrations: [astroImageTools],
   integrations: [
     relativeLinks(),
     htmlBeautifier(),
-    publicDir('static'),
+    sitemap(),
 		(await import("astro-compress")).default({
 			HTML: false,
       CSS: false,
 		}),
   ],
-  publicDir: './dist',
+  publicDir: 'true',
   outDir: './public',
-  output: "static",
   build: {
     format: 'file',
     assets: 'assets',
@@ -37,35 +36,38 @@ export default defineConfig({
     build: {
       minify: false,
       cssCodeSplit: false,
+      assetInlineLimit: 0,
       rollupOptions: {
         output: {
-          assetFileNames: (assetInfo) => {
-            let extType = assetInfo.name.split('.').at(-1);
-            if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
-              return 'assets/images/[name].[ext]';
-            }
-            if (/css|scss/i.test(extType)) {
-              return 'assets/styles/app.css';
-            }
-          },
           entryFileNames: 'assets/scripts/app.js',
+          assetFileNames: (assetInfo) => {
+            const {name} = assetInfo
+            if (/\.(jpe?g|png|gif|svg|xml|ico)$/.test(name ?? '')) {
+              return 'assets/images/[name][extname]';
+            }
+            if (/\.css$/.test(name ?? '')) {
+              return 'assets/styles/app[extname]';
+            }
+            return 'assets/[name][extname]';
+          }
         },
       },
     },
+    plugins: [
+      viteStaticCopy({
+        targets: [
+          {
+            src: "src/assets/images/*",
+            dest: "assets/images",
+          },
+        ],
+      }),
+    ],
     css: {
       preprocessorOptions: {
         scss: {
           additionalData:
-          `@import "src/assets/styles/_global.scss";
-           @import "src/assets/styles/foundation/mixin/_index.scss";
-           @import "src/assets/styles/foundation/function/_index.scss";
-           @import "src/assets/styles/foundation/keyframe/_index.scss";
-           @import "src/assets/styles/foundation/variable/_index.scss";
-           @import "src/assets/styles/foundation/vendor/_index.scss";
-           @import "src/assets/styles/object/component/_index.scss";
-           @import "src/assets/styles/object/project/_index.scss";
-           @import "src/assets/styles/object/layout/_index.scss";
-           @import "src/assets/styles/object/utility/_index.scss";`,
+          '@use "src/assets/styles/_global.scss" as *;'
         }
       }
     }

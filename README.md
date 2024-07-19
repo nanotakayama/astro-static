@@ -80,6 +80,7 @@ npm: 9.6.7
 .
 ├── assets
 │   ├── images
+│   │   └── favicon
 │   ├── scripts
 │   │   ├── components
 │   │   └── structure
@@ -98,6 +99,10 @@ npm: 9.6.7
 ├── pages
 └── templates
 ```
+- images/favicon  
+  faviconは以下ジェネレーターより生成、格納を推奨  
+  https://realfavicongenerator.net/
+
 - styles/faundation  
   Sassを使用するにあたる初期設定や変数をそれぞれ格納。  
   開発する内容に併せて変更する箇所がいくつかあるため、必読

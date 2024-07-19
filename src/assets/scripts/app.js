@@ -4,7 +4,7 @@ import './structure/adjustViewport';
 import InView from './components/inView';
 // import Accordion from './components/accordion';
 // import Modal from './components/modal';
-// import Header from './components/header';
+import Header from './components/header';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //   return new Modal(el);
   // });
 
-  // const header = new Header();
+  // header
+  const header = new Header();
 
 });
