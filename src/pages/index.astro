@@ -34,14 +34,16 @@ const cards = [
 ---
 
 <Layout>
+  <div class="p-main">
+    <Container>
+      <Picture 
+      srcPaths={['img-sample_pc.jpg','img-sample_sp.jpg']}
+      media='768' 
+    />	
+    </Container>
+  </div>
   <div class="p-contents">
     <Container class="p-contents__inner">
-      <div class="p-main">
-        <Picture 
-          srcPaths={['img-sample_pc.jpg','img-sample_sp.jpg']}
-          media='768' 
-        />	
-      </div>
       <ul class="p-contents__list">
         {cards.map(card =>(
           <Card
@@ -71,5 +73,9 @@ const cards = [
         margin-left: -20px;
       }
     }
+  }
+
+  .p-main {
+    margin-top: 80px;
   }
 </style>

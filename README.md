@@ -9,11 +9,16 @@ JavaScriptをビルド時に排除することで高速なWebサイトを作成�
 HTML,Sass,Javascriptの知見のある人向け
 
 
+## 特徴
+・Astroファイル内にHTML,CSS,Javascriptを全てまとめられる
+・ビルド後のHTMLに不要なファイルを取り除くことができるため、表示などのパフォーマンスが凄まじい  
+・画像やJavascriptを多く使うサイト（LP,ポートフォリオ）などに有効的  
+・またReact、Preact、Svelte、Vueなどの有名なフロントエンドフレームワークをサポートしているため、制作の幅が広い 
+
+
 ## 開発仕様
-Astroで構築したものをHTMLへ変換しWebへ表示。  
-SassとJavascriptは複数の記述を1つのファイルにまとめる。  
+Astroで構築したものをHTMLへ変換しWebへ表示。   
 CSS設計は「FLOCSS」を採用。  
-スタイリングはAstroに直接書く記述でも問題ないが、Sassファイルにまとめることで開発をスムーズに管理もしやすくなる（Javascirptも同様）
 
 Vscodeを使用している人は以下のプラグインのインストールを推奨
 ```
@@ -81,23 +86,16 @@ npm: 9.6.7
 ├── assets
 │   ├── images
 │   │   └── favicon
-│   ├── scripts
-│   │   ├── components
-│   │   └── structure
 │   └── styles
-│       ├── foundation
-│       │   ├── function
-│       │   ├── keyframe
-│       │   ├── mixin
-│       │   ├── variable
-│       │   └── vendor
-│       └── object
-│           ├── component
-│           ├── project
-│           └── utility
+│       └── foundation
+│           ├── function
+│           ├── keyframe
+│           ├── mixin
+│           └── variable
 ├── components
 ├── pages
 └── templates
+    └── mixin
 ```
 - images/favicon  
   faviconは以下ジェネレーターより生成、格納を推奨  
@@ -107,12 +105,6 @@ npm: 9.6.7
   Sassを使用するにあたる初期設定や変数をそれぞれ格納。  
   開発する内容に併せて変更する箇所がいくつかあるため、必読
 
-- styles/object  
-  構築したものをスタイリングしたものをそれぞれ格納  
-  component → パーツ類（button,card 等）  
-  project → レイアウト類  
-  utility → 有用類
-
 - components  
   パーツ類のAstroを格納
 
@@ -121,6 +113,9 @@ npm: 9.6.7
 
 - templates  
   ページに必要なテンプレート類のAstroを格納
+
+- templates/mixin
+  レイアウトやタグ系をパーツ化するもの格納
 
 
 ## その他
